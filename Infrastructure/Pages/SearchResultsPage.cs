@@ -93,17 +93,21 @@ namespace EbayPlaywrightAutomation.Infrastructure.Pages
         //  Collect item URLs via XPath                                         //
         // ------------------------------------------------------------------ //
 
+        private const int MaxPages = 3; // הגבלת עמודים — מניעת ריצה אינסופית
+
         public async Task<List<string>> CollectItemUrlsUnderPriceAsync(double maxPrice, int limit)
         {
             // HashSet מונע כפילויות אוטומטית (פריטים Sponsored שמופיעים פעמיים)
             var urlSet = new HashSet<string>();
+            int pageCount = 0;
 
-            while (urlSet.Count < limit)
+            while (urlSet.Count < limit && pageCount < MaxPages)
             {
+                pageCount++;
                 await WaitForResultsAsync();
 
                 var items = await ResultItems.AllAsync();
-                Console.WriteLine($"[SearchResults] Found {items.Count} result items on this page (XPath, header filtered).");
+                Console.WriteLine($"[SearchResults] Page {pageCount}/{MaxPages} — Found {items.Count} result items (XPath, header filtered).");
 
                 foreach (var item in items)
                 {
@@ -116,6 +120,12 @@ namespace EbayPlaywrightAutomation.Infrastructure.Pages
                 }
 
                 if (urlSet.Count >= limit) break;
+
+                if (pageCount >= MaxPages)
+                {
+                    Console.WriteLine($"[SearchResults] Reached max page limit ({MaxPages}) — stopping with {urlSet.Count} URLs.");
+                    break;
+                }
 
                 if (await IsVisibleAsync(NextPageButton, 3000))
                 {

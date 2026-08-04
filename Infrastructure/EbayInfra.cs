@@ -103,7 +103,7 @@ namespace EbayPlaywrightAutomation.Infrastructure
 
             await _page.GotoAsync(ConfigManager.BaseUrl, new PageGotoOptions
             {
-                WaitUntil = WaitUntilState.Load,  // Load is more reliable than DOMContentLoaded on eBay
+                WaitUntil = WaitUntilState.DOMContentLoaded,
                 Timeout = ConfigManager.NavigationTimeoutMs
             });
 
