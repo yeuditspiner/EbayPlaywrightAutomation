@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+TestResults/
+Screenshots/
+allure-results/
+allure-report/
+
+# Contains credentials — never commit this
+appsettings.json

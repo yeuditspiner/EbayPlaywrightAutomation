@@ -1,0 +1,28 @@
+{
+  "TestScenarios": [
+    {
+      "TestName": "Shoes under 220",
+      "Query": "shoes",
+      "MaxPrice": 220.00,
+      "Limit": 5,
+      "BudgetPerItem": 220.00,
+      "Description": "Search for shoes under $220 and add to cart"
+    },
+    {
+      "TestName": "Headphones under 100",
+      "Query": "headphones",
+      "MaxPrice": 100.00,
+      "Limit": 5,
+      "BudgetPerItem": 100.00,
+      "Description": "Search for headphones under $100 and add to cart"
+    },
+    {
+      "TestName": "Watch under 150",
+      "Query": "watch",
+      "MaxPrice": 150.00,
+      "Limit": 3,
+      "BudgetPerItem": 150.00,
+      "Description": "Search for watches under $150 and add to cart"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>EbayPlaywrightAutomation</RootNamespace>
+    <AssemblyName>EbayPlaywrightAutomation</AssemblyName>
+    <RunSettingsFilePath>$(MSBuildProjectDirectory)\ebay.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+
+  <!-- Auto-open Allure report after every test run -->
+  <Target Name="OpenAllureReport" AfterTargets="VSTest">
+    <Exec Command="&quot;C:\tools\allure-2.27.0 (1)\allure-2.27.0\bin\allure.bat&quot; generate &quot;$(OutputPath)allure-results&quot; --output &quot;$(OutputPath)allure-report&quot; --clean" ContinueOnError="true" />
+    <Exec Command="start &quot;&quot; &quot;$(OutputPath)allure-report\index.html&quot;" ContinueOnError="true" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="ExtentReports" Version="5.0.4" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.44.0" />
+    <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.44.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="NUnit" Version="4.1.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Allure.NUnit" Version="2.12.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\ebay_search.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="allureConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ebay.runsettings">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

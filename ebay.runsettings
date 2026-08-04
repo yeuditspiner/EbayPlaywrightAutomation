@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <!-- HTML report is generated automatically after every test run -->
+    <ResultsDirectory>TestResults</ResultsDirectory>
+  </RunConfiguration>
+
+  <LoggerRunSettings>
+    <Loggers>
+      <!-- Built-in HTML report — opens directly in any browser -->
+      <Logger friendlyName="html" enabled="True">
+        <Configuration>
+          <LogFileName>TestReport.html</LogFileName>
+        </Configuration>
+      </Logger>
+      <!-- Also keep the standard trx (XML) for CI systems -->
+      <Logger friendlyName="trx" enabled="True">
+        <Configuration>
+          <LogFileName>TestReport.trx</LogFileName>
+        </Configuration>
+      </Logger>
+    </Loggers>
+  </LoggerRunSettings>
+</RunSettings>
