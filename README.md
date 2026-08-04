@@ -1,6 +1,6 @@
 # eBay Playwright Automation — C#
 
-End-to-end automation for eBay using **Microsoft Playwright** + **NUnit** + **Allure Reports**, written in C# (.NET 8).
+End-to-end automation for eBay using **Microsoft Playwright** + **NUnit** + **Extent Reports** + **Allure Reports**, written in C# (.NET 8).
 
 ---
 
@@ -10,7 +10,7 @@ End-to-end automation for eBay using **Microsoft Playwright** + **NUnit** + **Al
 |------|---------|
 | .NET SDK | 8.0+ |
 | Node.js (for Playwright browsers) | 18+ |
-| Allure CLI (optional, for HTML report) | 2.x |
+| Allure CLI (optional, for Allure HTML report) | 2.x |
 
 ---
 
@@ -37,7 +37,12 @@ dotnet test --logger "console;verbosity=detailed"
 dotnet test --filter "TestName=Shoes under 220"
 ```
 
-### 4. Generate Allure HTML report
+### 4. View Extent HTML report
+
+After the test run, the report opens **automatically** in the browser.
+Manual path: `bin/Debug/net8.0/ExtentReports/TestReport.html`
+
+### 5. Generate Allure HTML report (optional)
 
 ```bash
 allure serve allure-results
@@ -77,8 +82,9 @@ EbayPlaywrightAutomation/
 │                                     # AssertCartTotalNotExceeds
 │
 ├── Utilities/
+│   ├── ExtentReportManager.cs    # Singleton Extent Spark HTML report (Dark theme, v5)
 │   ├── PriceParser.cs            # Regex price extractor ($12.99, US $x, ranges, commas)
-│   └── ScreenshotHelper.cs       # Timestamped PNG screenshots + byte[] for Allure
+│   └── ScreenshotHelper.cs       # Timestamped PNG screenshots + byte[] for reports
 │
 └── Tests/
     └── EbayE2ETests.cs           # NUnit [TestCaseSource] data-driven E2E test class
@@ -142,14 +148,14 @@ Add a new row to run a new scenario — no code changes needed.
 - **Variant selection** — variants are chosen **at random** from available (non-disabled) options. A specific selection strategy can be added to `ItemPage.SelectRandomVariantsAsync`.
 - **eBay DOM changes** — locators are CSS/attribute-based and may need updating if eBay redesigns its UI. They are isolated to individual Page Object classes for easy maintenance.
 - **Cart login wall** — some regions redirect to a login page when adding to cart. The current implementation handles the "Continue shopping" overlay but not a full login redirect.
-- **Allure** — results are written to `allure-results/`. Run `allure serve allure-results` to view the HTML report.
 
 ---
 
 ## Reports
 
-| Type | Location |
-|------|----------|
-| Screenshots | `bin/Debug/net8.0/Screenshots/` |
-| Allure results (raw) | `allure-results/` |
-| Allure HTML report | Run `allure serve allure-results` |
+| Type | Location | How to open |
+|------|----------|-------------|
+| **Extent HTML report** | `bin/Debug/net8.0/ExtentReports/TestReport.html` | Opens automatically after test run |
+| Screenshots (on failure) | Embedded in Extent report as base64 | Visible inside the report |
+| Allure results (raw) | `allure-results/` | Run `allure serve allure-results` |
+| Allure HTML report | Generated on demand | Run `allure serve allure-results` |
