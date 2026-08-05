@@ -212,7 +212,17 @@ Add a new row to run a new scenario — no code changes needed.
 
 ---
 
-## Reports
+## 📊 Dual-Reporting Architecture
+
+The framework utilizes a dual-reporting system to support both local development/debugging and enterprise CI/CD pipeline integration:
+
+1. **Extent Reports (Local & Immediate Feedback):**
+   - Generates a lightweight, standalone HTML report automatically opened upon test completion.
+   - Embedded with Base64 screenshot captures for step-by-step UI verification and fast local debugging.
+
+2. **Allure Framework (CI/CD & Analytics Integration):**
+   - Structures test results by `@AllureFeature`, `@AllureSuite`, and `@AllureTag` for high-level business categorization.
+   - Attaches test logs, dynamically collected URLs (`collected_urls.txt`), and step attachments suitable for test history tracking in CI/CD pipelines (e.g., GitHub Actions, Jenkins).
 
 | Type | Location | How to open |
 |------|----------|-------------|
