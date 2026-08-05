@@ -6,12 +6,24 @@
 #
 # הרצה: לחצי פעמיים על הקובץ
 #        או: powershell -File RunTestsAndReport.ps1
+#
+# דרישה: allure מותקן ונגיש ב-PATH המערכתי
+#         להתקנה: https://allurereport.org/docs/install/
 # ============================================================
 
-$projectPath   = "c:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\EbayPlaywrightAutomation.csproj"
-$allureResults = "c:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\allure-results"
-$allureReport  = "c:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\allure-report"
-$allureBat     = "C:\tools\allure-2.27.0 (1)\allure-2.27.0\bin\allure.bat"
+# נתיבים יחסיים — עובדים על כל מחשב ללא שינוי
+$scriptDir     = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$projectPath   = Join-Path $scriptDir "EbayPlaywrightAutomation.csproj"
+$allureResults = Join-Path $scriptDir "bin\Debug\net8.0\allure-results"
+$allureReport  = Join-Path $scriptDir "bin\Debug\net8.0\allure-report"
+
+# בדיקה ש-allure מותקן ב-PATH
+if (-not (Get-Command "allure" -ErrorAction SilentlyContinue)) {
+    Write-Host ""
+    Write-Host "ERROR: 'allure' not found in PATH." -ForegroundColor Red
+    Write-Host "Please install Allure and add it to PATH: https://allurereport.org/docs/install/" -ForegroundColor Yellow
+    exit 1
+}
 
 Write-Host ""
 Write-Host "=======================================" -ForegroundColor Cyan
@@ -25,16 +37,15 @@ Write-Host "=======================================" -ForegroundColor Yellow
 Write-Host "   Step 2: Generating Allure Report..." -ForegroundColor Yellow
 Write-Host "=======================================" -ForegroundColor Yellow
 
-# מייצר דוח HTML מתוך קבצי ה-JSON
-& $allureBat generate $allureResults --output $allureReport --clean
+# מריץ allure מה-PATH — עובד על כל מחשב
+allure generate $allureResults --output $allureReport --clean
 
 Write-Host ""
 Write-Host "=======================================" -ForegroundColor Green
 Write-Host "   Step 3: Opening Report in Browser..." -ForegroundColor Green
 Write-Host "=======================================" -ForegroundColor Green
 
-# פותח את הדוח בדפדפן
-Start-Process "$allureReport\index.html"
+Start-Process (Join-Path $allureReport "index.html")
 
 Write-Host ""
 Write-Host "Done! Report opened in browser." -ForegroundColor Green

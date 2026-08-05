@@ -11,8 +11,9 @@
   </PropertyGroup>
 
   <!-- Auto-open Allure report after every test run -->
+  <!-- Uses 'allure' from system PATH — no hardcoded local paths -->
   <Target Name="OpenAllureReport" AfterTargets="VSTest">
-    <Exec Command="&quot;C:\tools\allure-2.27.0 (1)\allure-2.27.0\bin\allure.bat&quot; generate &quot;$(OutputPath)allure-results&quot; --output &quot;$(OutputPath)allure-report&quot; --clean" ContinueOnError="true" />
+    <Exec Command="allure generate &quot;$(OutputPath)allure-results&quot; --output &quot;$(OutputPath)allure-report&quot; --clean" ContinueOnError="true" />
     <Exec Command="start &quot;&quot; &quot;$(OutputPath)allure-report\index.html&quot;" ContinueOnError="true" />
   </Target>
 
