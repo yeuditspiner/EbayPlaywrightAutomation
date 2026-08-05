@@ -202,6 +202,23 @@ Add a new row to run a new scenario — no code changes needed.
 
 ---
 
+## 🔐 Authentication Strategy
+
+By default, the test suite executes in **Guest Mode** (unauthenticated) to streamline test execution, reduce network overhead, and avoid anti-bot mechanisms or CAPTCHA triggers during automated checkout flows.
+
+- **Default Behavior:** `ConfigManager.SkipLogin` is set to `true`, bypassing credentials-based login.
+- **Optional Login:** Authentication can be enabled via `appsettings.json` by configuring valid user credentials and setting `SkipLogin` to `false`.
+
+```json
+"Login": {
+  "Email": "your@email.com",
+  "Password": "yourpassword",
+  "Skip": false
+}
+```
+
+---
+
 ## Assumptions & Limitations
 
 - **Login** — tests run as a **guest** by default (`Skip: true`). `LoginPage.cs` is implemented and can be enabled via config.
