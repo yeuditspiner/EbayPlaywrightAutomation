@@ -180,6 +180,14 @@ Edit `appsettings.json` to change runtime behaviour:
 
 ---
 
+## 📄 Data-Driven Testing (DDT) Architecture
+
+The framework uses **JSON** (`TestData/ebay_search.json`) as its primary data provider due to its native support for strongly-typed, nested objects and seamless serialization with .NET `System.Text.Json`.
+
+- **Extensibility:** The data-loading logic is decoupled via generic helpers (`JsonManager.cs`). If future requirements demand `CSV` or `YAML` support, a common `IDataLoader<T>` interface can be implemented without altering the test layer or business logic.
+
+---
+
 ## Test Data
 
 `TestData/ebay_search.json` drives every test case:
