@@ -22,17 +22,18 @@ namespace EbayPlaywrightAutomation.Infrastructure.Pages
         private ILocator PriceFilterSubmit => Page.Locator(
             "xpath=//button[contains(@class,'x-refine__go-btn')] | //button[@aria-label='Price filter submit button']");
 
-        // FIX: eBay changed DOM — items are now inside .srp-river-results
-        // Using XPath as required by the spec
+        // XPath גמיש שמשלב גם את הרשימה הסטנדרטית וגם את כרטיסי ה-data-view
         private ILocator ResultItems => Page.Locator(
-            "xpath=//ul[contains(@class,'srp-river-results')]//li[not(contains(@class,'header')) and not(contains(@class,'placeholder'))]");
+            "xpath=//ul[contains(@class,'srp-river-results')]//li[not(contains(@class,'header')) and not(contains(@class,'placeholder'))]" +
+            " | //*[contains(@data-view, 'mi:')]//li[not(contains(@class,'header'))]");
 
         private ILocator AnyResultContainer => Page.Locator(
             "xpath=//li[contains(@class,'s-item') and not(contains(@class,'s-item--header'))]" +
             " | //*[@data-view='mi:1686|iid:1']");
 
         private const string XPathPrice = ".//span[contains(@class,'s-item__price')] | .//span[contains(@class,'price')]";
-        private const string XPathLink  = ".//a[contains(@class,'s-item__link')] | .//a[contains(@href,'/itm/')]";
+        // XPath מדויק שתופס href של פריטי eBay בלבד
+        private const string XPathLink  = ".//a[@href and (contains(@href,'/itm/') or contains(@href,'ebay.com/itm'))]";
 
         private ILocator NextPageButton => Page.Locator(
             "a.pagination__next, a[aria-label='Go to next search page']");
