@@ -1,5 +1,6 @@
 using AventStack.ExtentReports;
 using Microsoft.Playwright;
+using NUnit.Framework;
 using EbayPlaywrightAutomation.Utilities;
 
 namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
@@ -8,7 +9,7 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
     /// Orchestrates the four main business processes:
     ///   0. LoginAsync
     ///   1. SearchItemsByNameUnderPriceAsync
-    ///   2. AddItemsToCartAsync
+    ///   2. AddItemsToCartAsync  — returns actual added count
     ///   3. AssertCartTotalNotExceedsAsync
     ///
     /// Accepts an optional ExtentTest for real-time step logging + screenshots.
@@ -37,15 +38,22 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
             ExtentTest?.Info(message);
         }
 
+        /// <summary>
+        /// FIX: Captures screenshot once as bytes, saves to file AND attaches to Extent.
+        /// Previously called CaptureAsync + CaptureBytesAsync = two browser IO operations.
+        /// Now only one capture is made — bytes are reused for both file save and Base64.
+        /// </summary>
         private async Task LogScreenshotAsync(string label)
         {
-            string path = await ScreenshotHelper.CaptureAsync(_page, label);
+            byte[] bytes = await ScreenshotHelper.CaptureBytesAsync(_page);
+
+            // Save to file using the bytes already captured
+            string path = await ScreenshotHelper.SaveBytesAsync(bytes, label);
             Log($"[Screenshot] {path}");
 
-            // Attach screenshot to Extent report in real-time
+            // Attach to Extent report as Base64 — no second browser capture needed
             if (ExtentTest != null)
             {
-                byte[] bytes = await ScreenshotHelper.CaptureBytesAsync(_page);
                 string base64 = Convert.ToBase64String(bytes);
                 ExtentTest.Info(label,
                     MediaEntityBuilder.CreateScreenCaptureFromBase64String(base64).Build());
@@ -87,7 +95,7 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
         {
             Log($"[Search] query='{query}' maxPrice={maxPrice} limit={limit}");
 
-            await _pages.HomePage.SearchAsync(query);
+            await _pages.HomePage.SearchAsync(query, maxPrice);
 
             bool hasResults = await _pages.SearchResultsPage.HasResultsAsync();
             if (!hasResults)
@@ -112,9 +120,16 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
         //  2. Add to cart                                                      //
         // ------------------------------------------------------------------ //
 
-        public async Task AddItemsToCartAsync(List<string> urls)
+        /// <summary>
+        /// FIX: Returns actual count of successfully added items.
+        /// Previously returned void — caller had no way to know how many were added,
+        /// leading to incorrect budget assertion when some items were skipped.
+        /// </summary>
+        public async Task<int> AddItemsToCartAsync(List<string> urls)
         {
             Log($"[Cart] Adding {urls.Count} item(s) to cart.");
+
+            int addedCount = 0;
 
             for (int i = 0; i < urls.Count; i++)
             {
@@ -125,6 +140,7 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
 
                 if (added)
                 {
+                    addedCount++;
                     await LogScreenshotAsync($"item_added_{i + 1}");
                     ExtentTest?.Pass($"Item {i + 1} added to cart");
                 }
@@ -135,16 +151,25 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
                     ExtentTest?.Warning($"Item {i + 1} skipped (no Add to Cart button)");
                 }
             }
+
+            Log($"[Cart] Successfully added {addedCount}/{urls.Count} item(s).");
+            return addedCount;
         }
 
         // ------------------------------------------------------------------ //
         //  3. Assert cart total                                                //
         // ------------------------------------------------------------------ //
 
-        public async Task AssertCartTotalNotExceedsAsync(double budgetPerItem, int itemsCount)
+        /// <summary>
+        /// FIX: Uses Assert.Fail() instead of throw new Exception().
+        /// In NUnit, Assert.Fail marks the test as a proper test failure,
+        /// not as an unexpected error — giving cleaner test reports.
+        /// Also uses actualAddedCount for precise budget calculation.
+        /// </summary>
+        public async Task AssertCartTotalNotExceedsAsync(double budgetPerItem, int actualAddedCount)
         {
-            double budget = budgetPerItem * itemsCount;
-            Log($"[Assert] Budget ceiling: {budgetPerItem} × {itemsCount} = {budget}");
+            double budget = budgetPerItem * actualAddedCount;
+            Log($"[Assert] Budget ceiling: {budgetPerItem} × {actualAddedCount} = {budget}");
 
             await _pages.CartPage.OpenAsync();
             await LogScreenshotAsync("cart_page");
@@ -163,9 +188,9 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
             if (total > budget)
             {
                 string msg = $"Cart total {total:F2} exceeds budget {budget:F2} " +
-                             $"({budgetPerItem} × {itemsCount} items).";
+                             $"({budgetPerItem} × {actualAddedCount} items).";
                 ExtentTest?.Fail(msg);
-                throw new Exception(msg);
+                Assert.Fail(msg); // FIX: NUnit proper test failure instead of raw Exception
             }
 
             Log("[Assert] PASS — cart total is within budget.");

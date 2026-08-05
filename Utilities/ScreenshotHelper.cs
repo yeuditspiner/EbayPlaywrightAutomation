@@ -36,7 +36,24 @@ namespace EbayPlaywrightAutomation.Utilities
         }
 
         /// <summary>
-        /// Takes a screenshot and returns its bytes (useful for attaching to Allure reports).
+        /// Saves pre-captured screenshot bytes to a timestamped file.
+        /// Used when bytes are already captured to avoid a second browser IO operation.
+        /// </summary>
+        public static async Task<string> SaveBytesAsync(byte[] bytes, string label)
+        {
+            string folder = Path.Combine(AppContext.BaseDirectory, ConfigManager.ScreenshotsPath);
+            Directory.CreateDirectory(folder);
+
+            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss_fff");
+            string safeName = label.Replace(" ", "_").Replace("/", "-").Replace("\\", "-");
+            string fullPath = Path.Combine(folder, $"{timestamp}_{safeName}.png");
+
+            await File.WriteAllBytesAsync(fullPath, bytes);
+            return fullPath;
+        }
+        /// <summary>
+        /// Takes a screenshot and returns its bytes (useful for attaching to Allure/Extent reports).
+        /// Use SaveBytesAsync to persist to file without a second browser capture.
         /// </summary>
         public static async Task<byte[]> CaptureBytesAsync(IPage page)
         {

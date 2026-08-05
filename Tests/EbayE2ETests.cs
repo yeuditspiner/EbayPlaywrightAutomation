@@ -145,15 +145,15 @@ namespace EbayPlaywrightAutomation.Tests
             _extentTest.Info($"Step 2: Adding {urls.Count} item(s) to cart");
             AllureApi.Step($"Add {urls.Count} item(s) to cart");
 
-            await _infra.BusinessProcesses.AddItemsToCartAsync(urls);
-            _extentTest.Pass($"Added {urls.Count} item(s) to cart");
+            int addedCount = await _infra.BusinessProcesses.AddItemsToCartAsync(urls);
+            _extentTest.Pass($"Added {addedCount}/{urls.Count} item(s) to cart");
 
             // ── Step 3: Assert cart total ────────────────────────────────────
-            _extentTest.Info($"Step 3: Assert cart total ≤ ${scenario.BudgetPerItem} × {urls.Count}");
-            AllureApi.Step($"Assert cart total ≤ ${scenario.BudgetPerItem} × {urls.Count}");
+            _extentTest.Info($"Step 3: Assert cart total ≤ ${scenario.BudgetPerItem} × {addedCount}");
+            AllureApi.Step($"Assert cart total ≤ ${scenario.BudgetPerItem} × {addedCount}");
 
             await _infra.BusinessProcesses.AssertCartTotalNotExceedsAsync(
-                scenario.BudgetPerItem, urls.Count);
+                scenario.BudgetPerItem, addedCount);
 
             _extentTest.Pass("Cart total assertion passed");
         }
