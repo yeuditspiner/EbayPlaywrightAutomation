@@ -29,9 +29,11 @@ namespace EbayPlaywrightAutomation.Utilities
             string cleaned = rawText
                 .Replace("US", "")
                 .Replace("USD", "")
+                .Replace("ILS", "")
                 .Replace("$", "")
                 .Replace("€", "")
                 .Replace("£", "")
+                .Replace("₪", "")
                 .Trim();
 
             var matches = _numberPattern.Matches(cleaned);

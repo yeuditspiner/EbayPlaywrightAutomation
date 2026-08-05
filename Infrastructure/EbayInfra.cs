@@ -101,6 +101,25 @@ namespace EbayPlaywrightAutomation.Infrastructure
             _pages = new PagesFactory(_page);
             _businessProcesses = new EbayBusinessProcesses(_pages, _page);
 
+            // Force eBay to display prices in USD by setting the currency cookie
+            await _context.AddCookiesAsync(new[]
+            {
+                new Cookie
+                {
+                    Name   = "dp1",
+                    Value  = "bu1p/QEBfX0BAX19AQA%3D",
+                    Domain = ".ebay.com",
+                    Path   = "/"
+                },
+                new Cookie
+                {
+                    Name   = "currency",
+                    Value  = "USD",
+                    Domain = ".ebay.com",
+                    Path   = "/"
+                }
+            });
+
             await _page.GotoAsync(ConfigManager.BaseUrl, new PageGotoOptions
             {
                 WaitUntil = WaitUntilState.DOMContentLoaded,

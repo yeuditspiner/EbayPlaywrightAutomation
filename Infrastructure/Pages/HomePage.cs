@@ -18,11 +18,17 @@ namespace EbayPlaywrightAutomation.Infrastructure.Pages
         public HomePage(IPage page) : base(page) { }
 
         /// <summary>Types a query into the search bar and submits it.</summary>
-        public async Task SearchAsync(string query)
+        public async Task SearchAsync(string query, double maxPrice = 0)
         {
-            await FillAsync(SearchInput, query);
-            await ClickAsync(SearchButton);
-            await Page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
+            // Build search URL with upper price limit (_udhi) baked in.
+            // This ensures eBay server-side filters results before we even parse prices,
+            // avoiding endless pagination caused by ILS/USD currency mismatch.
+            string priceParam = maxPrice > 0 ? $"&_udhi={maxPrice:F0}" : "";
+            string searchUrl = $"https://www.ebay.com/sch/i.html?_nkw={Uri.EscapeDataString(query)}&_sacat=0{priceParam}";
+            await Page.GotoAsync(searchUrl, new PageGotoOptions
+            {
+                WaitUntil = WaitUntilState.DOMContentLoaded
+            });
         }
 
         /// <summary>Returns true when the home page search bar is visible.</summary>
