@@ -227,13 +227,17 @@ By default, the test suite executes in **Guest Mode** (unauthenticated) to strea
 
 ---
 
-## Assumptions & Limitations
+## 📌 Assumptions & Limitations
 
-- **Login** — tests run as a **guest** by default (`Skip: true`). `LoginPage.cs` is implemented and can be enabled via config.
-- **Currency** — eBay may display prices in ILS when accessed from Israel. The search URL uses `_udhi` (server-side price cap) to filter results before parsing. `PriceParser` strips ILS, USD, $, ₪ symbols.
-- **Variant selection** — variants (size/color) are chosen at random from available (non-disabled) options.
-- **eBay DOM changes** — locators are CSS/XPath-based and isolated to Page Object classes for easy maintenance.
-- **Cart login wall** — handles the "Continue shopping" overlay. Full login redirect requires enabling `LoginPage`.
+- **Currency Handling:** Prices are parsed using `PriceParser`, which standardizes various currency formats (e.g., `$`, `USD`, `ILS`, `₪`) into `double`. The search URL uses `_udhi` (server-side price cap) to pre-filter results regardless of displayed currency.
+
+- **Authentication / Login:** The E2E process includes a guest/stub login check (`IsLoggedInAsync()`). If valid credentials are not provided or if CAPTCHA appears, the framework handles skipping or continuing as a guest session. Login can be enabled via `appsettings.json`.
+
+- **Dynamic Content & Locators:** Locators and wait strategies assume eBay's standard desktop UI. Dynamic selectors use Playwright's resilient auto-waiting mechanisms. Locators are isolated to Page Object classes for easy maintenance if eBay's UI changes.
+
+- **Variant selection** — variants (size/color) are chosen at random from available (non-disabled) options via `ItemPage.SelectRandomVariantsAsync`.
+
+- **Cart login wall** — handles the "Continue shopping" overlay. Full login redirect requires enabling `LoginPage` via config.
 
 ---
 
