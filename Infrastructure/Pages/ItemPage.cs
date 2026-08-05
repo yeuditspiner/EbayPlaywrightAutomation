@@ -49,7 +49,13 @@ namespace EbayPlaywrightAutomation.Infrastructure.Pages
             await SelectRandomVariantsAsync();
 
             if (await IsVisibleAsync(QuantityInput, 2000))
-                await FillAsync(QuantityInput, "1");
+            {
+                // FIX: check IsEnabled before Fill — disabled when last item or variant not selected
+                if (await QuantityInput.IsEnabledAsync())
+                    await FillAsync(QuantityInput, "1");
+                else
+                    Console.WriteLine("[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.");
+            }
 
             bool hasAtc = await IsVisibleAsync(AddToCartButton, 5000);
             if (!hasAtc) return false;
