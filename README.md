@@ -4,13 +4,48 @@ End-to-end automation for eBay using **Microsoft Playwright** + **NUnit** + **Ex
 
 ---
 
+## Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        TEST LAYER                               │
+│   EbayE2ETests.cs  ←  [TestCaseSource]  ←  ebay_search.json   │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ calls
+┌───────────────────────────▼─────────────────────────────────────┐
+│                   BUSINESS PROCESS LAYER                        │
+│              EbayBusinessProcesses.cs                           │
+│  SearchItemsByNameUnderPrice │ AddItemsToCart │ AssertCartTotal  │
+└──────┬──────────────────────┬───────────────────────┬───────────┘
+       │                      │                       │
+┌──────▼──────┐  ┌────────────▼──────────┐  ┌────────▼──────────┐
+│  PAGE LAYER (POM)                                               │
+│  HomePage   │  │ SearchResultsPage     │  │ ItemPage/CartPage  │
+│             │  │ (filter+pagination)   │  │ (variants+cart)    │
+└──────┬──────┘  └────────────┬──────────┘  └────────┬──────────┘
+       │                      │                       │
+┌──────▼──────────────────────▼───────────────────────▼──────────┐
+│                      INFRASTRUCTURE                             │
+│   BasePage.cs │ PagesFactory.cs │ EbayInfra.cs                  │
+│   (helpers)   │ (lazy registry) │ (browser lifecycle)           │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────────┐
+│                    SUPPORT LAYERS                               │
+│  ConfigManager │ JsonManager │ PriceParser │ ScreenshotHelper   │
+│  ExtentReportManager │ TestScenario (POCO)                      │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## Prerequisites
 
 | Tool | Version |
 |------|---------|
 | .NET SDK | 8.0+ |
 | Node.js (for Playwright browsers) | 18+ |
-| Allure CLI (optional, for Allure HTML report) | 2.x |
+| Allure CLI (optional) | 2.x |
 
 ---
 
@@ -19,7 +54,6 @@ End-to-end automation for eBay using **Microsoft Playwright** + **NUnit** + **Ex
 ### 1. Restore packages and install Playwright browsers
 
 ```bash
-cd EbayPlaywrightAutomation
 dotnet restore
 dotnet build
 pwsh bin/Debug/net8.0/playwright.ps1 install
@@ -37,12 +71,18 @@ dotnet test --logger "console;verbosity=detailed"
 dotnet test --filter "TestName=Shoes under 220"
 ```
 
-### 4. View Extent HTML report
+### 4. Run with settings file
+
+```bash
+dotnet test --settings ebay.runsettings
+```
+
+### 5. View Extent HTML report
 
 After the test run, the report opens **automatically** in the browser.
 Manual path: `bin/Debug/net8.0/ExtentReports/TestReport.html`
 
-### 5. Generate Allure HTML report (optional)
+### 6. Generate Allure HTML report (optional)
 
 ```bash
 allure serve allure-results
@@ -50,53 +90,71 @@ allure serve allure-results
 
 ---
 
-## Architecture
+## Layer Structure
+
+| Layer | Files | Responsibility |
+|-------|-------|----------------|
+| **Tests** | `Tests/EbayE2ETests.cs` | NUnit test cases, setup/teardown |
+| **Business Processes** | `Infrastructure/BusinessProcesses/` | Orchestration logic — search, add to cart, assert |
+| **Pages (POM)** | `Infrastructure/Pages/` | One class per page — locators + actions |
+| **Infrastructure** | `Infrastructure/EbayInfra.cs`, `BasePage.cs`, `PagesFactory.cs` | Browser lifecycle, shared helpers, page registry |
+| **Data** | `TestData/`, `DataManagers/` | JSON test data, config, models |
+| **Utilities** | `Utilities/` | Price parsing, screenshots, reporting |
+
+---
+
+## Project Structure
 
 ```
 EbayPlaywrightAutomation/
 │
-├── appsettings.json              # Runtime config (URL, browser, timeouts, paths)
-├── allureConfig.json             # Allure report settings
+├── appsettings.json                   # Runtime config (URL, browser, timeouts)
+├── allureConfig.json                  # Allure report settings
+├── ebay.runsettings                   # NUnit run settings
 │
 ├── TestData/
-│   └── ebay_search.json          # Data-driven scenarios (query, maxPrice, limit, budget)
+│   └── ebay_search.json               # Data-driven test scenarios
 │
 ├── DataManagers/
-│   ├── ConfigManager.cs          # Typed accessors over appsettings.json (IConfiguration)
-│   ├── JsonManager.cs            # Generic JSON file loader / saver (Newtonsoft.Json)
-│   └── TestScenario.cs           # POCO models for test data (TestScenario, TestDataRoot)
+│   ├── ConfigManager.cs               # Typed accessors over appsettings.json
+│   ├── JsonManager.cs                 # Generic JSON loader/saver
+│   └── TestScenario.cs                # POCO models (TestScenario, TestDataRoot)
 │
 ├── Infrastructure/
-│   ├── BasePage.cs               # Abstract base for all POMs — Playwright helpers, timeouts
-│   ├── PagesFactory.cs           # Lazy ??= registry — one IPage, all page objects
-│   ├── EbayInfra.cs              # Root facade — owns browser/context/page lifecycle
+│   ├── BasePage.cs                    # Abstract base — Playwright helpers, timeouts
+│   ├── PagesFactory.cs                # Lazy ??= page registry
+│   ├── EbayInfra.cs                   # Root facade — browser/context/page lifecycle
 │   │
 │   ├── Pages/
-│   │   ├── HomePage.cs           # Search input → submit
-│   │   ├── SearchResultsPage.cs  # Price filter, collect URLs, pagination
-│   │   ├── ItemPage.cs           # Variant selection, Add to Cart, overlay dismiss
-│   │   └── CartPage.cs           # Open cart, read subtotal, item count
+│   │   ├── HomePage.cs                # Search → navigate with price filter in URL
+│   │   ├── SearchResultsPage.cs       # Collect URLs via XPath, pagination
+│   │   ├── ItemPage.cs                # Variant selection, Add to Cart
+│   │   ├── CartPage.cs                # Read subtotal, item count
+│   │   └── LoginPage.cs               # Login (optional, Skip=true by default)
 │   │
 │   └── BusinessProcesses/
-│       └── EbayBusinessProcesses.cs  # SearchItemsByNameUnderPrice, AddItemsToCart,
-│                                     # AssertCartTotalNotExceeds
+│       └── EbayBusinessProcesses.cs   # SearchItemsByNameUnderPrice
+│                                      # AddItemsToCart
+│                                      # AssertCartTotalNotExceeds
 │
 ├── Utilities/
-│   ├── ExtentReportManager.cs    # Singleton Extent Spark HTML report (Dark theme, v5)
-│   ├── PriceParser.cs            # Regex price extractor ($12.99, US $x, ranges, commas)
-│   └── ScreenshotHelper.cs       # Timestamped PNG screenshots + byte[] for reports
+│   ├── ExtentReportManager.cs         # Extent Spark HTML report (Dark theme, v5)
+│   ├── PriceParser.cs                 # Price extractor — $, ILS, USD, ranges
+│   └── ScreenshotHelper.cs            # Timestamped PNG + base64 for reports
 │
 └── Tests/
-    └── EbayE2ETests.cs           # NUnit [TestCaseSource] data-driven E2E test class
+    └── EbayE2ETests.cs                # NUnit [TestCaseSource] data-driven E2E tests
 ```
 
-### Design Principles
+---
 
-- **Page Object Model (POM)** — every page has its own class; locators and actions live together, tests never touch Playwright directly.
-- **OOP / SRP** — `BasePage` holds reusable helpers; `PagesFactory` manages page instances; `EbayBusinessProcesses` owns orchestration logic; tests only call BPs.
-- **Data-Driven** — all search parameters come from `TestData/ebay_search.json`; adding a new scenario requires zero code changes.
-- **Lazy initialisation** — pages are created on first access via `??=`, reducing unnecessary object construction.
-- **IAsyncDisposable** — `EbayInfra` implements `IAsyncDisposable` to guarantee browser cleanup in `[TearDown]`.
+## Design Principles
+
+- **Page Object Model (POM)** — every page is a dedicated class; locators and actions live together; tests never touch Playwright directly.
+- **OOP / SRP** — `BasePage` holds reusable helpers; `PagesFactory` manages page instances; `EbayBusinessProcesses` owns orchestration; tests only call business processes.
+- **Data-Driven** — all parameters come from `TestData/ebay_search.json`; adding a scenario requires zero code changes.
+- **Lazy initialisation** — pages are created on first access via `??=`.
+- **IAsyncDisposable** — `EbayInfra` guarantees browser cleanup in `[TearDown]`.
 
 ---
 
@@ -107,13 +165,16 @@ Edit `appsettings.json` to change runtime behaviour:
 ```json
 {
   "BaseUrl":  "https://www.ebay.com",
-  "Browser":  "Chromium",          // Chromium | Firefox | Webkit
+  "Browser":  "Chromium",
   "Headless": false,
   "SlowMo":   50,
   "DefaultTimeoutMs":    30000,
-  "NavigationTimeoutMs": 60000,
+  "NavigationTimeoutMs": 120000,
   "ScreenshotsPath": "Screenshots",
-  "AllureResultsPath": "allure-results"
+  "AllureResultsPath": "allure-results",
+  "Login": {
+    "Skip": true
+  }
 }
 ```
 
@@ -143,11 +204,11 @@ Add a new row to run a new scenario — no code changes needed.
 
 ## Assumptions & Limitations
 
-- **Login** — tests run as a **guest** (no account). eBay allows guest cart on most regions. If login is required in your region, implement `LoginPage.cs` and call it from `EbayInfra.InitAsync()`.
-- **Currency** — prices are parsed as USD (`$`). For other currencies add symbol stripping in `PriceParser.cs`.
-- **Variant selection** — variants are chosen **at random** from available (non-disabled) options. A specific selection strategy can be added to `ItemPage.SelectRandomVariantsAsync`.
-- **eBay DOM changes** — locators are CSS/attribute-based and may need updating if eBay redesigns its UI. They are isolated to individual Page Object classes for easy maintenance.
-- **Cart login wall** — some regions redirect to a login page when adding to cart. The current implementation handles the "Continue shopping" overlay but not a full login redirect.
+- **Login** — tests run as a **guest** by default (`Skip: true`). `LoginPage.cs` is implemented and can be enabled via config.
+- **Currency** — eBay may display prices in ILS when accessed from Israel. The search URL uses `_udhi` (server-side price cap) to filter results before parsing. `PriceParser` strips ILS, USD, $, ₪ symbols.
+- **Variant selection** — variants (size/color) are chosen at random from available (non-disabled) options.
+- **eBay DOM changes** — locators are CSS/XPath-based and isolated to Page Object classes for easy maintenance.
+- **Cart login wall** — handles the "Continue shopping" overlay. Full login redirect requires enabling `LoginPage`.
 
 ---
 
@@ -156,6 +217,6 @@ Add a new row to run a new scenario — no code changes needed.
 | Type | Location | How to open |
 |------|----------|-------------|
 | **Extent HTML report** | `bin/Debug/net8.0/ExtentReports/TestReport.html` | Opens automatically after test run |
-| Screenshots (on failure) | Embedded in Extent report as base64 | Visible inside the report |
+| Screenshots | Embedded in Extent report as base64 | Visible inside the report |
 | Allure results (raw) | `allure-results/` | Run `allure serve allure-results` |
 | Allure HTML report | Generated on demand | Run `allure serve allure-results` |
