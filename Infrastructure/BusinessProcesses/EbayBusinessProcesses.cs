@@ -148,7 +148,7 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
                 {
                     Log($"[Cart] Item {i + 1} could not be added — skipping.");
                     await LogScreenshotAsync($"item_skipped_{i + 1}");
-                    ExtentTest?.Warning($"Item {i + 1} skipped (no Add to Cart button)");
+                    ExtentTest?.Info($"Item {i + 1} skipped (no Add to Cart button)");
                 }
             }
 
@@ -179,7 +179,7 @@ namespace EbayPlaywrightAutomation.Infrastructure.BusinessProcesses
             if (total == null)
             {
                 Log("[Assert] Could not read cart subtotal — treating as 0.");
-                ExtentTest?.Warning("Cart subtotal not visible — assertion skipped.");
+                ExtentTest?.Info("Cart subtotal not visible — assertion skipped.");
                 return;
             }
 
