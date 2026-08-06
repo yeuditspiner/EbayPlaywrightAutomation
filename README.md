@@ -188,6 +188,8 @@ The automated test run generates an Extent HTML Report.
 - **Local Report Path:** Running `dotnet test` generates an updated report at:
   `bin/Debug/net8.0/ExtentReports/TestReport.html`
 
+![Test Execution Report](docs/report-screenshot.png)
+
 ---
 
 ## 📄 Data-Driven Testing (DDT) Architecture
