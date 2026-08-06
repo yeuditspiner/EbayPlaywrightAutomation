@@ -184,9 +184,8 @@ Edit `appsettings.json` to change runtime behaviour:
 
 The automated test run generates an Extent HTML Report.
 
-- **Report File:** [docs/TestReport.html](./docs/TestReport.html)
 - **Local Report Path:** Running `dotnet test` generates an updated report at:
-  `bin/Debug/net8.0/ExtentReports/TestReport.html`
+  `bin/Debug/net8.0/ExtentReports/TestReport.html` (opens automatically in browser)
 
 ![Test Execution Report](docs/report-screenshot.png)
 
