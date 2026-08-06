@@ -180,6 +180,16 @@ Edit `appsettings.json` to change runtime behaviour:
 
 ---
 
+## 📊 Test Execution Report
+
+The automated test run generates an Extent HTML Report.
+
+- **Report File:** [docs/TestReport.html](./docs/TestReport.html)
+- **Local Report Path:** Running `dotnet test` generates an updated report at:
+  `bin/Debug/net8.0/ExtentReports/TestReport.html`
+
+---
+
 ## 📄 Data-Driven Testing (DDT) Architecture
 
 The framework uses **JSON** (`TestData/ebay_search.json`) as its primary data provider due to its native support for strongly-typed, nested objects and seamless serialization with .NET `System.Text.Json`.
