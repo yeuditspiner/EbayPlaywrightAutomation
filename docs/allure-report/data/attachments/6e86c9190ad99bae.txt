@@ -1,0 +1,34 @@
+[Search] query='shoes' maxPrice=220 limit=5
+[SearchResults] URL: https://www.ebay.com/sch/i.html?_nkw=shoes&_sacat=0&_udhi=220
+[SearchResults] Title: Shoes for sale | eBay
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items.
+[SearchResults] Price filter panel not found — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_130312_022_search_results_filtered.png
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 100 result items on this page (XPath, header filtered).
+[Search] Collected 5 URL(s).
+[Test] URLs collected: 5
+[Cart] Adding 5 item(s) to cart.
+[Cart] [1/5] Opening: https://www.ebay.com/itm/126734498309?_skw=shoes&itmmeta=01KZ8P0GNZ1V2XC8B6S7AZR18R&hash=item1d81f6fa05:g:blgAAOSwhElnFe7Y&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xBnZXlV5Jp%2F5Cw5Tlfm9jt7OAIsJG%2FdzlWB%2FVlHFWbhHh7zQ49jkLsCVYA4DDw0Qsx98lEFkrp07gItSwICH%2FmrIHKfVmI49LriSSftnRxbqHQQ7SLp6P3DAWShQA03Xz3f1CgdCRwmka1vzw3Mi2lUtxQvis0EbGwXNUDkf%2BC9P8Ki%2BaEkPFK%2BrsM9q2z2G0jtC6PfYz8O8XJfj0nlLDWxlfJw%2F5AgZ14fNv%2Bp57RtRw%3D%3D%7Ctkp%3ABlBMULKLgpb6Zw
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 1 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_130332_160_item_skipped_1.png
+[Cart] [2/5] Opening: https://www.ebay.com/itm/276680987037?_skw=shoes&itmmeta=01KZ8P0GNZ31KWF9F3G2FY7TV6&hash=item406b78d19d:g:s7QAAOSwS7FnCZPg&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xAlBJlhA%2FQrI%2FJ3NrWqRs%2BmsP7wOsigwbq8rbwZCDPlhLYLuJRassBixRbz%2BubZRjoaTdLeMa6KzXgt40e7%2F0RW8%2FGAupIKuvTiKgIMRDYV31GuOXNiFeSVZpZsvvkC8OPbRZxrVK9HgEa1V6yQYls7gmcmU09qjJzCbxIhZySty3gJi7v633Vpfl1o65CgflFbubBBydUZcE9byQSQNbDK6l%2BHk7Zi8Vxu4eT3B5eiLQ%3D%3D%7Ctkp%3ABlBMULKLgpb6Zw
+[Cart] Item 2 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_130357_333_item_skipped_2.png
+[Cart] [3/5] Opening: https://www.ebay.com/itm/157859797258?_skw=shoes&itmmeta=01KZ8P0GNZRFZV4MN250ZJJ33E&hash=item24c12d590a:g:O4gAAOSwkZhkING4&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xBA%2FzuGcF6FKMHIgSOKfo5wAzJt8M8HFZeBKB0tnnmLVKMBVTrY7SecLJ0dFYvFuKO%2Fn3SW9HvKKYGU%2BE%2BtvSYe2%2BV8iriao87x%2B4g3uM1qXV%2BdcyXZVj78nSPuM28BDts1eTc6sMH0vGbS3rIvWsXEbO%2BT5j98e4NhthaWeY8o%2BRJxWOzJLUO4UaSzTHdBa6On3x%2BiMNy%2BvyMt9USuU0Axrv9%2FcgsmjXssute7LF6V6g%3D%3D%7Ctkp%3ABlBMULKLgpb6Zw
+[Cart] Item 3 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_130431_232_item_skipped_3.png
+[Cart] [4/5] Opening: https://www.ebay.com/itm/298478357725?_skw=shoes&itmmeta=01KZ8P0GNZ1RAZ3D9PXSJX7GW7&hash=item457eb24cdd:g:5GkAAeSw7UVqSM0u&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xA26mx5Tf%2BIKsWrwEwEd2Vafpz9anxMxTlEKWpl%2FF9owGlWJ%2BX8QZ1xKbd3ibUHx58a5gZwVLoa5AZON%2BygDWg0stgYwOwYMPu6D34ab8cfKLwedR7bN8mtE1iawsVTlygrc4idGgw8yAhf37PWg%2B%2FUJ%2FVWySQ21UL7ox%2BMYitXYHpJb2Ph6XzSbGEwII1ywh8HmyJQAZVHV6yrOhx28qzKRfvFZcGZ6VGBIWgmXv5S%2BA%3D%3D%7Ctkp%3ABlBMULSLgpb6Zw
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 4 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_130458_838_item_skipped_4.png
+[Cart] [5/5] Opening: https://www.ebay.com/itm/287498997347?_skw=shoes&itmmeta=01KZ8P0GNZBVYZDVR86KW3KKSP&hash=item42f0468e63:g:Mm0AAeSw6FJqb2ql&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xAYLgSw3mR0s34kdBHXreoCAu7t%2B%2Fj43UDj7J6TK8bD6NXMuMTe%2BiRVWWfAnCOVCllk6fXhWe4q8Uo42AS4hMKoglfsSpj12Dqt3Dkjugq2u3BhZNf5cAgV9HkokMV8%2FP%2FSWhs35Xmz8HdBD5QgNlVAyvFIGdSopEWjvCJu62wE8ME4iZMT9IrHICNKf054AfwtaoHw4ysfFx80Tjep4MjU9ZJnL8WkasQiBhE5ljSoCg%3D%3D%7Ctkp%3ABk9SR7SLgpb6Zw
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 5 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_130530_174_item_skipped_5.png
+[Cart] Successfully added 0/5 item(s).
+[Assert] Budget ceiling: 220 × 0 = 0
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_130533_115_cart_page.png
+[Assert] Could not read cart subtotal — treating as 0.

@@ -1,0 +1,5 @@
+[Search] query='headphones' maxPrice=100 limit=5
+[SearchResults] Current URL: https://www.ebay.com/sch/i.html?_nkw=headphones&_sacat=0&_from=R40&_trksid=m570.l1313
+[SearchResults] Found 3 items with selector: [data-view='mi:1686|iid:1']
+[Search] Collected 0 URL(s).
+[Test] URLs collected: 0

@@ -1,0 +1,53 @@
+[Search] query='shoes' maxPrice=220 limit=5
+[SearchResults] URL: https://www.ebay.com/sch/i.html?_nkw=shoes&_sacat=0&_udhi=220
+[SearchResults] Title: Shoes for sale | eBay
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items.
+[SearchResults] Price filter panel not found — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_131633_206_search_results_filtered.png
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items on this page (XPath, header filtered).
+[Search] Collected 5 URL(s).
+[Test] URLs collected: 5
+[Cart] Adding 5 item(s) to cart.
+[Cart] [1/5] Opening: https://www.ebay.com/itm/377084458685?_skw=shoes&itmmeta=01KZ8PTJ11YT2H28V145AXVS2S&hash=item57cbfc36bd:g:PqQAAeSwT1Bpz3hE&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xC4AWINmzyxWn19pms4292TKEPFCRDWcNxO%2FvuqvDVzCh8ka1HNyJqcjZ%2FAAKq9%2BRe0tltJdBj7%2Bi5N%2BnN1OpcgGm73DBZFdZg226cuNtI62Bzf8CCXuXjltHeuQjJ847pRsDOn2mkASxxdBml0HDfv92Lb0LZXlZE1s3qzaqyL8AuDR--h0brlFOZbKOeU7NNJoCl9t%2F5LzY9ogkZZMTkZJ282l726E4Yrxy2KKXbmj8R7MI%2FmZQAW6boeubZWAY4L1Ij9YcavKVDKiaULnvFa%7Ctkp%3ABFBM8KDqlvpn
+[Cart] Item 1 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_131841_819_item_skipped_1.png
+[Cart] [2/5] Opening: https://www.ebay.com/itm/358821263685?_skw=shoes&itmmeta=01KZ8PTJ1149AARG5RKBR5EQWZ&hash=item538b69f945:g:lwcAAeSwlslqXk~H&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xDqmQdiYUSUtjojS1bRZW7VCmlcBdyLQSMebwQx2JksXaSadW%2FfK6nqvP%2FfXXNNFpLrqLqtbLfkGv%2Bitts8N8TvF6wpGjrHctHC4%2BSQqC8SZA9uGmJiCm%2BdGofZrJUxh8lMJOGW2U%2FWeM8IHe%2Ba4WW7NuuXsBQ9EMD37sa6xO69BghLbRp1r9YXgTRMyKl%2B2eAgBLPfE8q3TiDdLLdwk4BIhelwVmsfRDIOGScXYL%2BvtHdHaEeJibCvHwKLDhOYAbFzS4yhTimkc9nVxgQM7LPB%7Ctkp%3ABFBM8KDqlvpn
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 2 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_131907_308_item_skipped_2.png
+[Cart] [3/5] Opening: https://www.ebay.com/itm/136720105631?_skw=shoes&itmmeta=01KZ8PVNSXAD0N2ENSEM9TP2D3&hash=item1fd527409f:g:1jkAAeSwknJpD2zR&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xAzxd3GSdZcttPNax8mR6pV%2B9Eg%2FzWOSqPIGG%2Ba%2FnshZD9u%2FAY5gVgU3OaRO6RzOd%2BrZ0UP9c%2FcQv6xhoH5O%2FYEf3%2FkUCCPkt34ne3WoZBir8Fs3hV4QOe9LTmCV9Fj8PHfGmloQzwktLZaHEk72kXXXLNPq6NJkXFCsj5IUgeJB5T9NU7l4TDCr%2BdH2jwxpjSEMBMTqtiBmYT5OPGW7NJTbLtj%2FSxsKHI00OdGT9EI1bBnSx%2BknH--jGj4qQcXzHHZLmvc2hXRieY3BD02abxw%7Ctkp%3ABFBMxt3ulvpn
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 3 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_131934_833_item_skipped_3.png
+[Cart] [4/5] Opening: https://www.ebay.com/itm/286323885863?_skw=shoes&itmmeta=01KZ8PVNSX2DMZSM5V1YA5BD0F&hash=item42aa3bc727:g:Br0AAOSwJ5djJ9xT&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xCe0JBCuzvo4R0owhDE95RTQPEtY6EsgA5NFhEjscRvhWjgTNlj7X%2BFprYC%2BVu7iClg6ps0y4gDIY0ap1EGFt%2BtplBip9Muu5Pi6AMVI5I5lbbrWFhP3YXieRiPkftJ23CbM1T%2FLQ%2FX2pQ5Xqnt0dgHE8f0KIcXtMGy7tShCltW3eSWwEqsoNIgvTqqynAqckvGdMirahSv2ikJ3S%2FxOx3PTRcK1GaPDNK3t2h8sTUt1QD1wtcJDtADbPjsYX9o8M0gr6oyITBXmRe2ogPjEoZH%7Ctkp%3ABFBMxt3ulvpn
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 4 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132032_408_item_skipped_4.png
+[Cart] [5/5] Opening: https://www.ebay.com/itm/127281078720?_skw=shoes&itmmeta=01KZ8PW42GH5VV3MJEDFR6EA7K&hash=item1da28b21c0:g:rZEAAeSwXWxojIUA&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xCl8WM4QI7Liy9eO%2FS1TfBEP41VjOSX8%2Fq87Pr4K3N%2B62DZ%2F4ZegRL9%2BRDrtWqva5lwxW7ZYQHkREfYBTbkE78HQ7Njhp3iMPZJBXRINiw%2FCRw6ik9Ak83QSzD2J3crQD61EMST4aQz9PQYA1sDJ%2BDfYYN8rxiJak83fTUGFT4xUPkcToNgZsbq9gUbaAqgrHsrW2mArIeQLwCXFLdMoMyLUxDKIGYKxII0QMBr3TWoyDj6KnJ0c756gub3%2FgnoezZftWp0E6DphyaxC7c%2B63DP%7Ctkp%3ABFBMzsHwlvpn
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 5 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132105_457_item_skipped_5.png
+[Cart] Successfully added 0/5 item(s).
+[Assert] Budget ceiling: 220 × 0 = 0
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132114_242_cart_page.png
+[Assert] Could not read cart subtotal — treating as 0.

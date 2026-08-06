@@ -1,0 +1,31 @@
+[Search] query='shoes' maxPrice=220 limit=5
+[SearchResults] URL: https://www.ebay.com/sch/i.html?_nkw=shoes&_sacat=0&_udhi=220
+[SearchResults] Title: Shoes for sale | eBay
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 25 result items.
+[SearchResults] Price filter panel not found — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_115242_592_search_results_filtered.png
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 25 result items on this page (XPath, header filtered).
+[XPath] price: 'ILS 174.00' → accepted (server-side filtered)
+[XPath] price: 'ILS 115.80' → accepted (server-side filtered)
+[XPath] price: 'ILS 103.16' → accepted (server-side filtered)
+[XPath] price: 'ILS 124.22' → accepted (server-side filtered)
+[XPath] price: 'ILS 73.69' → accepted (server-side filtered)
+[Search] Collected 5 URL(s).
+[Test] URLs collected: 5
+[Cart] Adding 5 item(s) to cart.
+[Cart] [1/5] Opening: https://www.ebay.com/itm/158127338282?_skw=shoes&epid=11039811999&itmmeta=01KZB4C18P1HYV9462TGR42AQT&hash=item24d11fb32a:g:vpwAAeSwHpNp~5zr&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xBDoRQQsLPBLuN5s98bhpoU9OnDQXrR8xeoxLIBxYtgDjYdANw93k%2BNfCp%2Bhxm7qMKSVoCwbVQ2vgYfK%2FFKWKa5z67NBZEibvaxmdWB%2BpjZjirVXVZXHbxYt8Wa%2BaLXEizjN6kHVmYqUo6gvXIfigP2T5tU5R%2BPWKUPgQZBBVQVx2ZrS2HKfDVGtGlasw%2F8oMcKqRvhTR9qClVHjIWR%2FCo8TRGXjny%2F03tCdLDp4eKk6g%3D%3D%7Ctkp%3ABlBMUL6VsOT6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_115322_705_item_added_1.png
+[Cart] [2/5] Opening: https://www.ebay.com/itm/157912640930?_skw=shoes&epid=14043410926&itmmeta=01KZB4C18PCRK02WFPSW6MSRDQ&hash=item24c453ada2:g:K6IAAeSwj9loTxDx&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xDebhjwdFIkBG0EL%2BhTNUVWsZgMNlcGmnp1Ih%2FI31o2GXrY1d0kKVVoy94mgt8n6G%2Fb%2FCNsqyhiApAmrTKP%2BuEh5w%2FpUuCU%2BIgAhQ8q58I2AjzS8z9Jsdqprg2HwhDWlz7GOyLXnYydt46qoSCdJnEunwA4zD3lEkzmIg6TM8%2B%2BN4IUClB2lo1hB7js188Ol2BdnBE0CrwlFA6v8l9tZhuABswjLjYiisxitIR4VOHJ2Q%3D%3D%7Ctkp%3ABlBMUMCVsOT6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_115404_264_item_added_2.png
+[Cart] [3/5] Opening: https://www.ebay.com/itm/157860176615?_skw=shoes&epid=26059071412&itmmeta=01KZB4C18PZER3AEA0ATYRPEEF&hash=item24c13322e7:g:F8EAAeSwIbBoWejh&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xDqzlppM1Yx5pce6W6swNoJYmtFnlL5M95j2PiurlmX92HK7dpClDqxnzURlJFjWlI8jnFUUXlu7li1RgsEVme10ebgu3%2BF%2BADSqXi3OzVZ7%2FDFwbf5nUNyxY7lSVsmbRImT3%2BCw76BNP51VtguJodulRPVgd%2BsMf1C9Es98IylBE%2FY6%2FYExxXLw79ORIOD0Td1Jv%2B1AtWq3W1iZ4ORdZ%2B3SGAhceQuB4ETPTWb2L8Tjw%3D%3D%7Ctkp%3ABlBMUMCVsOT6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_115439_402_item_added_3.png
+[Cart] [4/5] Opening: https://www.ebay.com/itm/157897442983?_skw=shoes&itmmeta=01KZB4C18PPN9PE4QC3PD670AK&hash=item24c36bc6a7:g:RP8AAeSwB3Fp~48l&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xBadPcsENkSNTVhBl37%2FIMMOhAc5YP%2F9n2Ukdeun0gSDTtH95%2BqFqldKYrDWiK%2BG8k7SF275l6HHQ906KicRK0WbgWisfzdRZvnQlBaCZLqwnjuuoQS4VGGGlde6gEbnrsD69i6SWZFAjKlXaQkOUFMGGeyEb7Q%2B%2F15SR6VPCm36eM%2BEz7QIeiKX%2FsfQ%2Bwnw01r5AE8DkkHgxrwJQt4XYShohZRQFSJ6mVJxkQDFtOeag%3D%3D%7Ctkp%3ABlBMUMCVsOT6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_115519_468_item_added_4.png
+[Cart] [5/5] Opening: https://www.ebay.com/itm/157942993490?_skw=shoes&itmmeta=01KZB4C18PQ0CQ8P3WF16FZ45Y&hash=item24c622d252:g:OkEAAOSwcAdncLa7&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xC9wXMcem5hMxq7LozfaxktOcWhekPNHGbNjA80IKB%2F4T%2F5Um3vvRG%2FCm3mm1Cy3E9qsx7PUzyWBKML1phDuOiqqUZ2jANJkpUwKkwwj7E%2F%2BoQ8tPGy4GHnEa3ZnYiK8uuQOEaIYtNXovnsiUkTanTZiG0V8fd8leJWV6%2BEgPFU6NrK1XXvl2WOzL0I8L9FATZvXRTCcBKaKk6Vixhes4XI6BRMi4NY7M8%2FqDJleTZdgA%3D%3D%7Ctkp%3ABlBMUMCVsOT6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_115600_147_item_added_5.png
+[Cart] Successfully added 5/5 item(s).
+[Assert] Budget ceiling: 220 × 5 = 1100
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_115616_989_cart_page.png
+[Assert] Could not read cart subtotal — treating as 0.

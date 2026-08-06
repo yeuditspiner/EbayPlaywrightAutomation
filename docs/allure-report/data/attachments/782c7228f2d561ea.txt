@@ -1,0 +1,45 @@
+[EbayInfra] CAPTCHA detected! Please solve it manually in the browser window.
+[EbayInfra] Waiting up to 30 seconds...
+[Test] Login skipped (running as guest). Set Login:Skip=false in appsettings.json to enable.
+[Search] query='shoes' maxPrice=220 limit=5
+[SearchResults] URL: https://www.ebay.com/sch/i.html?_nkw=shoes&_sacat=0&_from=R40&_trksid=m570.l1313
+[SearchResults] Title: Shoes for sale | eBay
+[SearchResults] Fallback found 3 items: xpath=//*[@data-view='mi:1686|iid:1']
+[SearchResults] Price filter panel not found — skipping.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] Found 0 result items on this page (XPath).
+[SearchResults] Collected 0/5 — going to next page.
+[SearchResults] URL did not change after Next — stopping pagination.
+[Search] Collected 0 URL(s).
+[Test] URLs collected: 0

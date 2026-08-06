@@ -1,0 +1,33 @@
+[Search] query='headphones' maxPrice=100 limit=5
+[SearchResults] URL: https://www.ebay.com/sch/i.html?_nkw=headphones&_sacat=0&_udhi=100
+[SearchResults] Title: Headphones for sale | eBay
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 47 result items.
+[SearchResults] Price filter panel not found — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132218_720_search_results_filtered.png
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 71 result items on this page (XPath, header filtered).
+[Search] Collected 5 URL(s).
+[Test] URLs collected: 5
+[Cart] Adding 5 item(s) to cart.
+[Cart] [1/5] Opening: https://www.ebay.com/itm/257477951447?_skw=headphones&epid=6067020612&itmmeta=01KZ8Q3DFQBHZF07ZS5AM3TCP3&hash=item3bf2e1bfd7:g:DxYAAeSwBXRp76Wf&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xDki5c0LVKOE5PLOla8mryYqPOSaPSb9m2xbXCaubLC9XQzIL%2BSkoBwHRKz%2Bl%2FioBoliyv4ybQIzLcz26L62eN561B5Jvmist5f99Saa2aiyWvI8ZGs6gA8bSrx8Yd8JooBaz08vHF01fBCqfDywGojBlbBNfrlkWQ9PNtx9jIdop1kQXjeCJmBHXWjxwCyCfDFElpFwXNPgi6vjWmCEW3mfdY3NrUxphaUArT2S4j6Kw%3D%3D%7Ctkp%3ABlBMUKzYjZf6Zw
+[Cart] Item 1 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132239_575_item_skipped_1.png
+[Cart] [2/5] Opening: https://www.ebay.com/itm/800263686096?_skw=headphones&itmmeta=01KZ8Q3DFQ06YZSZ7APDSWNWF1&hash=itemba536ec7d0:g:rIQAAeSwdlhqQuq~&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xD5rQN92ruWXDCSUnYEKUXnmB%2FpkkH43ae6LCFvDy6yMXhJFDkr72t7yQ3hgkevZPMeE24yu3VfvNV9VQH1KLlWhWYTNLOxYv3JSl6Qni%2FxDUc5Vr8w61U2kYxXjm0wm9t2HozUM2Q0q%2BWqvWYQxRNuK66Y5BfATgsW5XAmSRN8Ee2Xb17%2BZK07oDClzr1fgM5XqJBXOX5V6h2BukwJRinkJ2Fyl6cZ0ciuaqEDvSstwA%3D%3D%7Ctkp%3ABlBMUKzYjZf6Zw
+[Cart] Item 2 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132254_346_item_skipped_2.png
+[Cart] [3/5] Opening: https://www.ebay.com/itm/389892281954?_skw=headphones&itmmeta=01KZ8Q3DFQZ08Y9B1EB7ZSY4FN&hash=item5ac7641662:g:~jQAAeSwVcBp3y3X&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xBxfSiYxSr2MLDhbQNzOv7UpkPVgCFGsa3cYE9cKlcfhLo1VjhhyN2c4moc2W%2FXz4AylcQ7I4CM5fgqmtbB9sTwb9c29Ga1%2F%2BUbpGaIifWKuGQuFUDqD%2FskpDydPR7Yh9UYw6NdvwiW2X64smVexmKr6VMv2dR8APw6dqyKkiS08YLY8rW%2FjcU0KvplMzlhULZOZI6EBD2IQDdSIyY1F%2FF5WsR41Z6I7g26Mt2LdCC2ew%3D%3D%7Ctkp%3ABlBMUKzYjZf6Zw
+[Cart] Item 3 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132313_738_item_skipped_3.png
+[Cart] [4/5] Opening: https://www.ebay.com/itm/404664479386?_skw=headphones&itmmeta=01KZ8Q3DFQNKRKMWVD0JGZK7M0&hash=item5e37e1ee9a:g:saIAAOSwSxVlb8rj&itmprp=enc%3AAQALAAAA8GfYFPkwiKCW4ZNSs2u11xBH3SEnDlRb%2FgffspuNO3ayXGkeHo%2Bk4XKpyo80Z%2B4kKHpqGWuDaDD2yLzSNmjsm%2BEA%2FcDNI%2FP5%2FKRq6mdTIQBWEpstp5AnqFfKPLVTObA50XYfpWgexWN7qgu1WgYiYxKo1QWNSp4qtS3Kxmz1YpBTZfpKVGNcjKg89R5Y3Mt7Ls%2FptkB6486MvEA5MmKXoG%2BbA56C6rAN0SSstlcwaIQR2Oa06Rj9R1kqn9jgrZBeI1XnG6rf402%2BA5r%2Fwdt%2BOSZXrxy02ALIltNVvxPmjRRUhE0cx%2FFJsbOz4j8bWB8sDQ%3D%3D%7Ctkp%3ABk9SR6zYjZf6Zw
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 4 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132335_697_item_skipped_4.png
+[Cart] [5/5] Opening: https://www.ebay.com/itm/385886634178?_skw=headphones&itmmeta=01KZ8Q3DFQYMW0EMTQXCXG5ZXZ&hash=item59d8a2c0c2:g:x00AAOSwdR5kyv6f&itmprp=enc%3AAQALAAAA8GfYFPkwiKCW4ZNSs2u11xDbHD6t2SNigfqY5ZB4t7FFr3zekGT%2B5WaHTWrGdySY5itaOQZ8rLdR0wR696TT7Er8uIaDvziHhyF7--PtyX%2BF0tWCaqOosXFy81hAsFazzCtq%2Bwg%2B6CFWcZdyxKPermG4NMncDDToxQFQovcncMemorXoVmQezz%2FLWO0LO32e2VVvDlA21QUHVwOCclSHV2NCobbK56RZjsUlmPQBcGf7e%2B%2Fdo8mbU1U%2FhJWie4ctjIiC5jstHyM%2BeelWKswi8q12gtjnOj5T%2Fc8eLAE24A6rh0An7oMV5AR2I4a2nhrbzQ%3D%3D%7Ctkp%3ABk9SR67YjZf6Zw
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 5 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132400_293_item_skipped_5.png
+[Cart] Successfully added 0/5 item(s).
+[Assert] Budget ceiling: 100 × 0 = 0
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_132404_836_cart_page.png
+[Assert] Could not read cart subtotal — treating as 0.

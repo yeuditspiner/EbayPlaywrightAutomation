@@ -1,0 +1,3 @@
+[Search] query='headphones' maxPrice=100 limit=5
+[Search] No results found.
+[Test] URLs collected: 0

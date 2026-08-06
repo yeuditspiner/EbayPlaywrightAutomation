@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Aug 05 13:35:04 IDT 2026","Wed Aug 05 13:37:44 IDT 2026","159558","","eBay E2E","","EbayE2ETests","EbayFullFlow_SearchAddCartAssert","Headphones under 100",""
+"passed","Wed Aug 05 13:40:56 IDT 2026","Wed Aug 05 13:41:14 IDT 2026","18150","","eBay E2E","","EbayE2ETests","PriceParser_ParsesCommonFormats","PriceParser_ParsesCommonFormats",""
+"passed","Wed Aug 05 13:37:44 IDT 2026","Wed Aug 05 13:40:56 IDT 2026","191826","","eBay E2E","","EbayE2ETests","EbayFullFlow_SearchAddCartAssert","Watch under 150",""
+"passed","Thu Aug 06 12:41:01 IDT 2026","Thu Aug 06 12:45:25 IDT 2026","263837","","eBay E2E","","EbayE2ETests","EbayFullFlow_SearchAddCartAssert","Shoes under 220",""

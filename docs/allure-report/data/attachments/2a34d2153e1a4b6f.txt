@@ -1,0 +1,3 @@
+[Search] query='shoes' maxPrice=220 limit=5
+[Search] No results found.
+[Test] URLs collected: 0

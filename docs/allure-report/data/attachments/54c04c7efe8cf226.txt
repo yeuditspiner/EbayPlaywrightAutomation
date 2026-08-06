@@ -1,0 +1,48 @@
+[Search] query='watch' maxPrice=150 limit=3
+[SearchResults] URL: https://www.ebay.com/sch/i.html?_nkw=watch&_sacat=0&_udhi=150
+[SearchResults] Title: Watch for sale | eBay
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items.
+[SearchResults] Price filter panel not found — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_133816_090_search_results_filtered.png
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 35 result items on this page (XPath, header filtered).
+[Search] Collected 3 URL(s).
+[Test] URLs collected: 3
+[Cart] Adding 3 item(s) to cart.
+[Cart] [1/3] Opening: https://www.ebay.com/itm/397175783333?_skw=watch&itmmeta=01KZ8R23RHCYVPC0BEPBRYM2ET&hash=item5c79857fa5:g:~1YAAeSwxC5ox8Kg&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xBJi%2BNoO06URM8Q88yI1RoAlhztnKakC8Lf5XbmRbPBsuxZUiCW869nMZ55YNWP0KDXTOJwBLhxvF%2BFrlnSOuTQiTL5aa%2Boz2WxDV8um%2BWTtZJOjF91OoH4zmvuSU%2F0nhzlXMzha%2Bw12jT1gvervvmVcD37noRKkiKLZH8f9MEaPvf8V%2F3YJ1NE6Lr7HBKDpWCb2j%2B5KRU756o1T5QO%2FEJ42T0fjB%2Bwvlc7SmruazDdiRERKVGLORnfpG9KatSXoSMOo3Q140BHbmUed9BI2CwM%7Ctkp%3ABFBM-LyImPpn
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 1 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_133949_097_item_skipped_1.png
+[Cart] [2/3] Opening: https://www.ebay.com/itm/397155375267?_skw=watch&itmmeta=01KZ8R23RHS28AZF633G3SA138&hash=item5c784e18a3:g:FrUAAOSwtChi7NSK&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xC25Kl2A%2BfbAfmrMV1%2BtNXiVrKh7eywXkRiv57T2LpOwWhGJzWN7JH0oSGT8ZFApli%2B4mY%2FJjT4eoE42TGOkxkl86Km0eP7FGYW66kNOhpbr7nnRATKG4L5qpmPyTnau2dgGiOsw%2BuyieHwh6cDrlBnYwdNxsTQn9ONmJzIC2ygZFXyEHha5gjw98mnBKmVe9PRP%2B5zJTH2lkIusSAJ3IinSrTF9fOHKiuvBwO2iKpFn8bGogQhLjWnmJaYoTZ8yTmbuyhLzdf%2F241bkN4522BS%7Ctkp%3ABFBM-LyImPpn
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 2 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_134017_244_item_skipped_2.png
+[Cart] [3/3] Opening: https://www.ebay.com/itm/397196142523?_skw=watch&itmmeta=01KZ8R37W06S7KBY86B8HD3KSP&hash=item5c7abc27bb:g:pvAAAOSwtBdnxdDV&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xA9KbdJOUlY8H%2BlKPMNgtraENdHOPT833KBp9iv8%2Bt4AkhJvglUR54X4LJVJyISLlCeJBOqWlk9rPhPcDevkFI%2Bb5Ia0NY%2Bu%2B%2BWdE0%2FhJJ5zmLLKBf2J0HV6jQo5drnfYQptqrpxrBqFnP%2BcF7fD%2FO3k%2FBrlxmCl%2Fk4KN8OiKbfgnGKnSgvLkVe3Hjt%2F45f%2F8GUncJPU05BcQ8duCnlpZu%2BUlmd3%2Fe20eYZ1yR3K0V8tboMD5hHGcxojmFr%2FvQE0rkfg9eYnpWc8RuZPIY8OQEf%7Ctkp%3ABFBMtv6MmPpn
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Cart] Item 3 could not be added — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_134041_999_item_skipped_3.png
+[Cart] Successfully added 0/3 item(s).
+[Assert] Budget ceiling: 150 × 0 = 0
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_134045_010_cart_page.png
+[Assert] Could not read cart subtotal — treating as 0.

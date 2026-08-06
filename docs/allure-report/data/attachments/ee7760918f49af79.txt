@@ -1,0 +1,27 @@
+[Search] query='shoes' maxPrice=220 limit=5
+[SearchResults] URL: https://www.ebay.com/sch/i.html?_nkw=shoes&_sacat=0&_udhi=220
+[SearchResults] Title: Shoes for sale | eBay
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 13 result items.
+[SearchResults] Price filter panel not found — skipping.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_122458_664_search_results_filtered.png
+[DIAG] li.s-item=0 | data-view li.s-item=0 | not-header=0 | srp-results=0
+[SearchResults] Found 108 result items on this page (XPath, header filtered).
+[Search] Collected 5 URL(s).
+[Test] URLs collected: 5
+[Cart] Adding 5 item(s) to cart.
+[Cart] [1/5] Opening: https://www.ebay.com/itm/178064614857?_skw=shoes&itmmeta=01KZB6703A71B9KNGQKK7Z4YM6&hash=item29757a65c9:g:Kt0AAeSwLQ1p5f45&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xA%2FKBrO43fnEWzfDuM5Z7i%2BZdLHJ6EmJlPFvTkw3B3Sbm2tHdsN2yslhc17%2BJE3mglcpyoz--RfpIssfZfWkR6rYuvWxGhUN2%2Fmd78E0tAGAoNym9kJpQPQlN0y2PBMD39omIVK%2BZ20b4zrJxX6gA8WGvAnwbZLzI5YhnddVU8edMVPnetoYsM3iUvPFo2tAABwYM5MokdEBxQELB4Qv0Smd4aSFoSvC95bq9b5fiU8Gw%3D%3D%7Ctkp%3ABlBMUPSBnOb6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_122529_297_item_added_1.png
+[Cart] [2/5] Opening: https://www.ebay.com/itm/196896303899?_skw=shoes&itmmeta=01KZB6703A42A50YHBA13WZDBK&hash=item2dd7ef2b1b:g:UAYAAOSwGkRnX122&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xCxzd4RWok54KniTGeHP7FJjK77O0R2CwyKAuXbmE%2B52LLoRZ1pqX0csLc8I5f3%2Bnr%2FvWJ19Ge6vgZ8UUM%2B3cMEkzHffxPynQUEYcwLV1NK6NBM2dNduOgKX6t7GAlbSlgRS6GXq--kKcYFoL34G%2Fe6%2Fk2yIQdqDNPYna8DlivS6bue%2Bff%2BCcfX9oWoZw0ANqKPaoPuYOJE0HVYPZzi0b2xbRS%2FPX0zmRY%2BKQqZ%2FIjxOQ%3D%3D%7Ctkp%3ABlBMUPSBnOb6Zw
+[ItemPage] Quantity input is disabled (last item or variant needed) — skipping fill.
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_122547_039_item_added_2.png
+[Cart] [3/5] Opening: https://www.ebay.com/itm/276680987037?_skw=shoes&itmmeta=01KZB6703ADMXDV553MF03KAN9&hash=item406b78d19d:g:s7QAAOSwS7FnCZPg&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xAlBJlhA%2FQrI%2FJ3NrWqRs%2BmR92c2bPU0oZsaRlS7cQkDnI9PLkg1FUP1dKKfvEULtRWXxPw2kk0BU5jiFsXJmQ0tu%2F4msgGvHBUtO1pt%2BYTMfhrVruQdEHrz5X%2BtIG6jDvSCPhujX75oXd2mDq1XoE4t%2BSH1BbtBXPDcjufpyVndy4qc0TMiJymfZysqu4p7YEw9u8ZAa%2Be%2F7NvzBREgY8QT2woJbu7DzP62xiZ79RQbQ%3D%3D%7Ctkp%3ABlBMUPSBnOb6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_122613_614_item_added_3.png
+[Cart] [4/5] Opening: https://www.ebay.com/itm/227340632858?_skw=shoes&epid=13043980662&itmmeta=01KZB6703AX9RS6XNSAMTTHNM9&hash=item34ee8ec31a:g:3x4AAeSwamJqAATQ&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xCu6D8XH1FQ2UxGyCL7UOvLfATNtN4VVWQ7qlqxPRU97%2B2FnqZrw2Di%2Bla3hElfjqnAFGBgt9f1KT5PCirjFiJRVohCsfVzMP5X8IsumKwteBGCVROEFKHb65qb%2FMvV0Mc4Me08i2PbzLCtWpNcMQBZxdm5%2BfVvv71uwDHgkGtyfjgwEe3ypUJkI3sR5luMwKxrI4DFp%2FFNJFadFPbsU39%2FiqLKpr7dB9xdKkBZDfS8kQ%3D%3D%7Ctkp%3ABlBMUPSBnOb6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_122644_765_item_added_4.png
+[Cart] [5/5] Opening: https://www.ebay.com/itm/398230712942?_skw=shoes&itmmeta=01KZB6703A9J7Y0Y1SCAQSFXXD&hash=item5cb866726e:g:HUcAAeSwa3tqay24&itmprp=enc%3AAQALAAAAwGfYFPkwiKCW4ZNSs2u11xBArKz2yWkXh7q5B0jDDJf9wOTKmS%2BgcztgeKOMr0C38021eCrRq2lCtgNRbPq3L%2B1h0Csv4sl%2Bh4NxLJPS%2BZtST9vD1EcENj451pIhx%2FQBrI6jEIXQ26mZV3N%2BKOD3yfd%2BcYZG4lttUvBb7JJMwxJEc6y93iPf4ikSKE9k6%2BeM5lNOyxs%2B0qfnw3lyFXFldh8NXFleszhSH52FJUTPIt4xto1CtvCvB5%2BSBYtX7FhDEw%3D%3D%7Ctkp%3ABk9SR_SBnOb6Zw
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_122708_144_item_added_5.png
+[Cart] Successfully added 5/5 item(s).
+[Assert] Budget ceiling: 220 × 5 = 1100
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260806_122715_460_cart_page.png
+[Assert] Cart subtotal: 2296.79  Budget: 1100.00

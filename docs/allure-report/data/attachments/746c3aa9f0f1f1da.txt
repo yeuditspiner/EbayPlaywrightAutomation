@@ -1,0 +1,18 @@
+[Search] query='watch' maxPrice=150 limit=3
+[SearchResults] URL: https://www.ebay.com/sch/i.html?_nkw=watch&_sacat=0&_from=R40&_trksid=m570.l1313
+[SearchResults] Title: Watch for sale | eBay
+[SearchResults] Fallback found 3 items: xpath=//*[@data-view='mi:1686|iid:1']
+[SearchResults] Price filter panel not found — skipping.
+[Screenshot] Saved: C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_014052_009_search_results_filtered.png
+[Screenshot] C:\Users\YEHUDITSP\source\repos\EbayPlaywrightAutomation\bin\Debug\net8.0\Screenshots\20260805_014052_009_search_results_filtered.png
+[SearchResults] Page 1/3 — Found 0 result items (XPath, header filtered).
+[SearchResults] Collected 0/3 — going to next page.
+[SearchResults] URL did not change — waiting for NetworkIdle (CSR).
+[SearchResults] Page 2/3 — Found 0 result items (XPath, header filtered).
+[SearchResults] Collected 0/3 — going to next page.
+[SearchResults] URL did not change — waiting for NetworkIdle (CSR).
+[SearchResults] NetworkIdle timeout — continuing anyway.
+[SearchResults] Page 3/3 — Found 0 result items (XPath, header filtered).
+[SearchResults] Reached max page limit (3) — stopping with 0 URLs.
+[Search] Collected 0 URL(s).
+[Test] URLs collected: 0

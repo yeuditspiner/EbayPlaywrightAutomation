@@ -1,0 +1,4 @@
+[Login] Checking login status...
+[Login] Already logged in — skipping.
+[Search] query='headphones' maxPrice=100 limit=5
+[SearchResults] Current URL: https://www.ebay.com/

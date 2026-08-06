@@ -1,0 +1,3 @@
+[Search] query='watch' maxPrice=150 limit=3
+[Search] No results found.
+[Test] URLs collected: 0

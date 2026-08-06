@@ -9,9 +9,6 @@ allure-report/
 # Contains credentials — never commit this
 appsettings.json
 
-# Allow test report to be committed
-!bin/
-!bin/Debug/
-!bin/Debug/net8.0/
-!bin/Debug/net8.0/ExtentReports/
-!bin/Debug/net8.0/ExtentReports/TestReport.html
+# Allow docs folder
+!docs/
+!docs/**

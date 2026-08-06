@@ -1,0 +1,5 @@
+[Login] Checking login status...
+[Login] Already logged in — skipping.
+[Search] query='watch' maxPrice=150 limit=3
+[SearchResults] Current URL: https://www.ebay.com/sch/i.html?_nkw=watch&_sacat=0&_from=R40&_trksid=m570.l1313
+[SearchResults] Found 3 items with selector: [data-view='mi:1686|iid:1']
