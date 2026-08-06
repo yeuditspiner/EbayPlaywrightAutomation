@@ -46,10 +46,16 @@ namespace EbayPlaywrightAutomation.Infrastructure
                 }
             };
 
-            // Use a persistent context (saved profile) so eBay doesn't see a fresh browser
+            // Delete saved profile before each run to ensure clean cart and fresh session
             string profilePath = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "EbayPlaywrightProfile");
+
+            if (Directory.Exists(profilePath))
+            {
+                Directory.Delete(profilePath, recursive: true);
+                Console.WriteLine("[EbayInfra] Cleared browser profile — cart is now empty.");
+            }
 
             Directory.CreateDirectory(profilePath);
 
