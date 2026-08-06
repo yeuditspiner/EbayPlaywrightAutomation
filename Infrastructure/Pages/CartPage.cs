@@ -13,13 +13,12 @@ namespace EbayPlaywrightAutomation.Infrastructure.Pages
         private const string CartUrl = "https://cart.ebay.com/";
 
         #region XPath Locators
-        // Cart subtotal — tries multiple XPath expressions for different eBay UI versions
+        // Cart subtotal — uses stable data-test-id attribute
         private ILocator SubtotalLocator => Page.Locator(
-            "xpath=//*[@id='subtotal-value'] | " +
+            "xpath=//*[@data-test-id='SUBTOTAL']//span[contains(@class,'text-display-span')] | " +
+            "//*[@data-test-id='SUBTOTAL'] | " +
             "//*[@data-test-id='cart-subtotal-value'] | " +
-            "//*[contains(@class,'sc-subtotal__value')] | " +
-            "//*[contains(@class,'subtotal')]//span | " +
-            "//span[contains(@class,'cart-bucket-footer-total-price')]").First;
+            "//*[@id='subtotal-value']").First;
 
         // Individual item price elements in cart
         private ILocator ItemPrices => Page.Locator(
