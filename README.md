@@ -186,6 +186,7 @@ The automated test run generates an Extent HTML Report.
 
 - **Local Report Path:** Running `dotnet test` generates an updated report at:
   `bin/Debug/net8.0/ExtentReports/TestReport.html` (opens automatically in browser)
+- **Allure Report:** Available in [`docs/allure-report/`](./docs/allure-report/) — clone the repo and open `docs/allure-report/index.html` locally, or run `allure open docs/allure-report`
 
 ![Test Execution Report](docs/report-screenshot.png)
 
