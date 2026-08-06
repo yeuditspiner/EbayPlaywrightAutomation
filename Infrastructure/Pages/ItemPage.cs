@@ -12,7 +12,7 @@ namespace EbayPlaywrightAutomation.Infrastructure.Pages
     {
         #region XPath Locators
         private ILocator AddToCartButton => Page.Locator(
-            "xpath=//button[@id='atcBtn_btn'] | //*[@data-testid='x-mweb-atc-btn'] | //button[normalize-space(.)='Add to cart']").First;
+            "xpath=//*[starts-with(@id,'atcBtn_btn')] | //a[@data-testid='ux-call-to-action'][contains(.,'Add to cart')] | //button[normalize-space(.)='Add to cart']").First;
 
         private ILocator BuyItNowButton => Page.Locator(
             "xpath=//button[@id='binBtn_btn'] | //button[normalize-space(.)='Buy It Now']").First;
